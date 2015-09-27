@@ -13,4 +13,5 @@ public interface ICoursePlanDAO {
 	public void addCoursePlan(String year,String proId);
 	public void addCoursePlan1(String year,String semester,String proId,String courseId);
 	public CoursePlan getCourseByCoYear(String courseId,String year);
+	public String getLastCoursePlan();
 }

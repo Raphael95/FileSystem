@@ -158,7 +158,7 @@ public class CoursePlanDAO implements ICoursePlanDAO{
 	public void addCoursePlan(String year,String proId)
 	{
 		DataBaseDAO myDB=new DataBaseDAO();
-		String sql="insert into UpFile(year,proId) values('"+year+"','"+proId+"')";
+		String sql="insert into CoursePlan(year,proId) values('"+year+"','"+proId+"')";
 		try
 		{
 			myDB.executeSQL(sql);
@@ -176,7 +176,7 @@ public class CoursePlanDAO implements ICoursePlanDAO{
 	public void addCoursePlan1(String year,String semester,String proId,String courseId)
 	{
 		DataBaseDAO myDB=new DataBaseDAO();
-		String sql="insert into UpFile(year,semester,proId,courseId) values('"+year+"','"+semester+"','"+proId+"','"+courseId+"')";
+		String sql="insert into CoursePlan(year,semester,proId,courseId) values('"+year+"','"+semester+"','"+proId+"','"+courseId+"')";
 		try
 		{
 			myDB.executeSQL(sql);
@@ -219,15 +219,41 @@ public class CoursePlanDAO implements ICoursePlanDAO{
 		return cp;
 	}
 	
+	public String getLastCoursePlan() {
+		DataBaseDAO myDB=new DataBaseDAO();
+		String sql="SELECT IDENT_CURRENT('CoursePlan') AS cpId";
+		CoursePlan cp=new CoursePlan();
+		try
+		{
+			ResultSet mySet=myDB.getResultSet(sql);
+			while(mySet.next()){
+				cp.setCpId(mySet.getString("cpId"));
+			}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch(ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		return cp.getCpId();
+	}
+	
 	public static void main(String[] args)
 	{
 		CoursePlanDAO course=new CoursePlanDAO();
-		List<CoursePlan> list=course.getCoursePlanByOrder(1,4,"1", "2013");
+		/*List<CoursePlan> list=course.getCoursePlanByOrder(1,4,"1", "2013");
 		for(CoursePlan cp:list)
 		{
 			System.out.println(cp.getCpId());
 		}
-		System.out.println(course.allPage(4, "1", "2013"));
+		System.out.println(course.allPage(4, "1", "2013"));*/
+		//course.addCoursePlan("2015","1");
+		course.addCoursePlan1("2015", "2", "1", "1315270");
+		System.out.println(course.getLastCoursePlan());
 	}
+	
 	
 }
