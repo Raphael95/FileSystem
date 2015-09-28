@@ -94,6 +94,7 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
 				if((name == null) ||(name.equals(""))&&(adjunctsize.equals("0")))	//如果上传文件为空
 					continue;							//退出程序
 				adjunctname = name.substring(name.lastIndexOf("\\")+1,name.length());
+				request.setAttribute("filePath", adjunctname);
 				address = fileDir+"\\"+adjunctname;		//创建上传文件的保存地址
 				File saveFile = new File(address);		//根据文件保存地址，创建文件
 					try {

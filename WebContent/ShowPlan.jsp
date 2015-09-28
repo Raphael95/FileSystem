@@ -111,8 +111,11 @@
 	String year=request.getParameter("year");
 	System.out.println(year);
 	CoursePlan cp=coursePlan.getCoursePlanByProYear(proId, year);
-	System.out.println(cp.getCpId());
-	FileUp f=file.getFileByCpId(cp.getCpId());
+	System.out.println(coursePlan.getCoursePlanByProYear(proId, year).getCpId());
+	FileUp f=file.getFileByCpId(coursePlan.getCoursePlanByProYear(proId, year).getCpId());
+	String source="/upload/";
+	String path=source+f.getFileName();
+	System.out.println(path);
 %>
 	
 <div id="head">
@@ -145,7 +148,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="DownServlet?path=<%=getServletContext().getRealPath("/upload") %>&fileId=<%=f.getFileId() %>"><img src="images/down.jpg"></a>
+					<a href="DownServlet?path=<%=getServletContext().getRealPath(path) %>&fileId=<%=f.getFileId() %>"><img src="images/down.jpg"></a>
 				</td>
 			</tr>
 		</table>

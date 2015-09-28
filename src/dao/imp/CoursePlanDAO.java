@@ -158,7 +158,8 @@ public class CoursePlanDAO implements ICoursePlanDAO{
 	public void addCoursePlan(String year,String proId)
 	{
 		DataBaseDAO myDB=new DataBaseDAO();
-		String sql="insert into CoursePlan(year,proId) values('"+year+"','"+proId+"')";
+		String courseId="0";
+		String sql="insert into CoursePlan(year,proId,courseId) values('"+year+"','"+proId+"','"+courseId+"')";
 		try
 		{
 			myDB.executeSQL(sql);
