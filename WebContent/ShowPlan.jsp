@@ -126,35 +126,44 @@
     <div class="center1">
     	<div class="jncenter">
     			<table>
+    			<tr></tr>
+    			<tr></tr>
+    			<tr></tr>
+    			<tr></tr>
 			<tr>
 				<td>
 					<%=f.getFileName() %>
 				</td>
 			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr></tr>
 			<tr>
 				<td>
 					专业： <%=request.getParameter("professional")%>
 				</td>
 			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr></tr>
 			<tr>
 				<td>
 					年级： <%=year%>
 				</td>
 			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr></tr>
 			<tr>
 				<td>
 					文件类型： <%=f.getType() %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="DownServlet?path=<%=getServletContext().getRealPath(path) %>&fileId=<%=f.getFileId() %>"><img src="images/down.jpg"></a>
 				</td>
 			</tr>
 		</table>
     	</div>
     	<div class="kncenter">
     		<img src="images/fex/doc.png" width="100px" height="100px">
+    		<a href="DownServlet?path=<%=getServletContext().getRealPath(path) %>&fileId=<%=f.getFileId() %>"><img src="images/down.jpg"></a>
     	</div>
     </div>
    

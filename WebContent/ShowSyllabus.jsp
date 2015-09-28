@@ -134,6 +134,7 @@
 			System.out.println(pageNo);
 		}
 	List<CoursePlan> cp=coursePlan.getCoursePlanByOrder(pageNo, 6, proId, year);
+	String source="/upload/";
 %>
 <div id="head">
      <jsp:include page="Header.jsp"></jsp:include>
@@ -169,6 +170,7 @@
     	</div>
     	<div class="kncenter">
     		<img src="images/fex/doc.png" width="100px" height="100px">
+    		<a href="DownServlet?path=<%=getServletContext().getRealPath(source+file.getFileByCpId(cp.get(0).getCpId()).getFileName()) %>"><img src="images/down.jpg"></a>
     	</div>
     </div>
 <% 
@@ -202,6 +204,7 @@
     	</div>
     	<div class="kncenter">
     		<img src="images/fex/doc.png" width="100px" height="100px">
+    		<a href="DownServlet?path=<%=getServletContext().getRealPath(source+file.getFileByCpId(cp.get(1).getCpId()).getFileName()) %>"><img src="images/down.jpg"></a>
     	</div>
     </div>
 <%
@@ -235,6 +238,7 @@
     	</div>
     	<div class="kncenter">
     		<img src="images/fex/doc.png" width="100px" height="100px">
+    		<a href="DownServlet?path=<%=getServletContext().getRealPath(source+file.getFileByCpId(cp.get(2).getCpId()).getFileName()) %>"><img src="images/down.jpg"></a>
     	</div>
     </div>
 <% 
@@ -268,6 +272,7 @@
     	</div>
     	<div class="kncenter">
     		<img src="images/fex/doc.png" width="100px" height="100px">
+    		<a href="DownServlet?path=<%=getServletContext().getRealPath(source+file.getFileByCpId(cp.get(3).getCpId()).getFileName()) %>"><img src="images/down.jpg"></a>
     	</div>
     </div>
 <%
@@ -301,6 +306,7 @@
     	</div>
     	<div class="kncenter">
     		<img src="images/fex/doc.png" width="100px" height="100px">
+    		<a href="DownServlet?path=<%=getServletContext().getRealPath(source+file.getFileByCpId(cp.get(4).getCpId()).getFileName()) %>"><img src="images/down.jpg"></a>
     	</div>
     </div>
 <% 
@@ -334,6 +340,7 @@
     	</div>
     	<div class="kncenter">
     		<img src="images/fex/doc.png" width="100px" height="100px">
+    		<a href="DownServlet?path=<%=getServletContext().getRealPath(source+file.getFileByCpId(cp.get(5).getCpId()).getFileName()) %>"><img src="images/down.jpg"></a>
     	</div>
     </div>
 <% 
